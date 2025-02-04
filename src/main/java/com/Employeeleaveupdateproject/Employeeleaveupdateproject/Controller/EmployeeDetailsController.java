@@ -23,7 +23,7 @@ public class EmployeeDetailsController {
     @Autowired
     private EmployeeDetailsServices employeeServices;
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<EmployeeDetails> createEmployee(@RequestBody EmployeeDetails employee) {
         return ResponseEntity.ok(employeeServices.saveEmployee(employee));
     }
