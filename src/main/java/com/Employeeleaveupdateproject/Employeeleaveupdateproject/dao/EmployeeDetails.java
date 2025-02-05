@@ -1,4 +1,4 @@
-package com.Employeeleaveupdateproject.Employeeleaveupdateproject.Dao;
+package com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao;
 import java.sql.Date;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -128,7 +128,22 @@ public class EmployeeDetails {
     public void setPanCardNumber(String panCardNumber) {
         this.panCardNumber = panCardNumber;
     }
-}
+
+	public Object getRoleId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setMappingId(Object id) {
+		// TODO Auto-generated method stub
+		
+	}
+    }
 
 
 

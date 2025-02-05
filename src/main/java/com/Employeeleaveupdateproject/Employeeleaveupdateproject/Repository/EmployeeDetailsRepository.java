@@ -1,7 +1,8 @@
 package com.Employeeleaveupdateproject.Employeeleaveupdateproject.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Dao.EmployeeDetails;
+
+import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDetails;
 
 @Repository
 public interface EmployeeDetailsRepository extends JpaRepository<EmployeeDetails, Long> {

@@ -3,16 +3,16 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Dao.EmployeeDetails;
+
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Repository.EmployeeDetailsRepository;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Services.EmployeeDetailsServices;
+import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDetails;
 
 @Service
 public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
 
     @Autowired
     private EmployeeDetailsRepository employeeRepository;
-
     public EmployeeDetails saveEmployee(EmployeeDetails employee) {
         // Check if email or mobile number already exists (optional validation)
         if (employeeRepository.existsByEmail(employee.getEmail())) {
@@ -71,4 +71,20 @@ public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
             throw new RuntimeException("Employee not found with ID: " + id);
         }
     }
+
+	@Override
+	public EmployeeDetails roleId(EmployeeDetails employee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EmployeeDetails mappingId(EmployeeDetails employee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+
 }

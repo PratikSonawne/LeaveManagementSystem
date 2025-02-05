@@ -3,9 +3,10 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Dao.EmployeeDesignation;
+
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Repository.EmployeeDesignationRepository;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Services.EmployeeDesignationServices;
+import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDesignation;
 
 @Service
 public class EmployeeDesignationServicesImpl implements EmployeeDesignationServices {
