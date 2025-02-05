@@ -57,4 +57,9 @@ public class EmployeeDesignationMapping {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public Long getDesignationId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

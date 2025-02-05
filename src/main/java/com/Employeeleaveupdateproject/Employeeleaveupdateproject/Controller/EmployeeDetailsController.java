@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Model.EmployeeModel;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Services.EmployeeDetailsServices;
-import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDesignationMapping;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDetails;
 
 @RestController
@@ -24,19 +24,13 @@ public class EmployeeDetailsController {
     private EmployeeDetailsServices employeeServices;
     
     @PostMapping("/add")
-    public EmployeeDetails createEmployee(@RequestBody EmployeeDetails employee) {
-        EmployeeDetails savedEmployee = employeeServices.saveEmployee(employee);
-
-        EmployeeDesignationMapping mapping = new EmployeeDesignationMapping();
-        mapping.setEmployeeId(savedEmployee.getId());
-        mapping.setDesignationId(employee.getRoleId()); // Assuming roleId is provided in request
-
-        EmployeeDesignationMapping savedMapping = null;
-		savedEmployee.setMappingId(savedMapping.getId());
-        return savedEmployee;
+    public ResponseEntity<EmployeeModel> createEmployee(@RequestBody EmployeeModel employeeModel) {
+        EmployeeModel response = EmployeeDetailsServices.createEmployee(employeeModel);
+        return ResponseEntity.ok(response);
     }
 
-      @GetMapping
+     
+    @GetMapping
     public ResponseEntity<List<EmployeeDetails>> getAllEmployees() {
         return ResponseEntity.ok(employeeServices.getAllEmployees());
     }

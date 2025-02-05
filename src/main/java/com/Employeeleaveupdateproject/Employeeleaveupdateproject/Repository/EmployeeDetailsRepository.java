@@ -11,5 +11,6 @@ public interface EmployeeDetailsRepository extends JpaRepository<EmployeeDetails
     // Your query methods
 
 	boolean existsByMobileNo(String mobileNo);
-}
+
+	}
 

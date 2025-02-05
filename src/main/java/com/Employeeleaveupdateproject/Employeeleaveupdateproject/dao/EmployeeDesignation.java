@@ -9,24 +9,24 @@ public class EmployeeDesignation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long roleId;
-	private String roleName;
+	private Long role_Id;
+	private String role_Name;
 
 	// Getters and Setters
 
 	public Long getRoleId() {
-		return roleId;
+		return role_Id;
 	}
 
 	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
+		this.role_Id = roleId;
 	}
 
 	public String getRoleName() {
-		return roleName;
+		return role_Name;
 	}
 
 	public void setRoleName(String roleName) {
-		this.roleName = roleName;
+		this.role_Name = roleName;
 	}
 }

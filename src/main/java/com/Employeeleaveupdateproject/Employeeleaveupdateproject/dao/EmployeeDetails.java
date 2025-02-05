@@ -31,6 +31,8 @@ public class EmployeeDetails {
     private String aadharNumber;
     private String panCardNumber;
 
+	private Long id;
+
     // Getters and Setters
 
     public Long getEmployeeId() {
@@ -129,20 +131,24 @@ public class EmployeeDetails {
         this.panCardNumber = panCardNumber;
     }
 
-	public Object getRoleId() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long string) {
+        this.id = string;
+    }
+
+	public String getRoleName() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Long getId() {
+	public Long getMappingId() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void setMappingId(Object id) {
-		// TODO Auto-generated method stub
-		
-	}
     }
 
 
