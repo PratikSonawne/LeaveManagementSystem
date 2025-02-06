@@ -89,20 +89,7 @@ public class EmployeeModel {
 	public void setPanCardNumber(String panCardNumber) {
 		this.panCardNumber = panCardNumber;
 	}
-//	public Long getMappingId() {
-//		return mappingId;
-//	}
-//	public void setMappingId(Long mappingId) {
-//		this.mappingId = mappingId;
-//	}
-//	
-//	public String getRoleName() {
-//		return roleName;
-//	}
-//	public void setRoleName(String roleName) {
-//		this.roleName = roleName;
-//	
-//	}
+
 	public Integer getRoleId() {
 		return roleId;
 	}
