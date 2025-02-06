@@ -18,10 +18,7 @@ public interface EmployeeDetailsServices {
 		EmployeeDetails mappingId(EmployeeDetails employee);		
 
 		EmployeeDetails saveEmployee(EmployeeDesignationMapping mapping);
-		static EmployeeModel createEmployee(EmployeeModel employeeModel) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+		EmployeeModel createEmployee(EmployeeModel employeeModel);
 
 }
 

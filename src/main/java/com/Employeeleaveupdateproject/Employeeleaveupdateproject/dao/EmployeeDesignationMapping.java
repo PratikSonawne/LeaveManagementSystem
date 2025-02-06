@@ -11,7 +11,7 @@ public class EmployeeDesignationMapping {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long mappingId;
     private Long employeeId;
-    private Long roleId;
+    private Long roleid;
 
     // Constructors
     public EmployeeDesignationMapping() {
@@ -20,7 +20,7 @@ public class EmployeeDesignationMapping {
     public EmployeeDesignationMapping(Long mappingId, Long employeeId, Long roleId) {
         this.mappingId = mappingId;
         this.employeeId = employeeId;
-        this.roleId = roleId;
+        this.roleid = roleId;
     }
 
     // Getters and Setters
@@ -41,11 +41,11 @@ public class EmployeeDesignationMapping {
     }
 
     public Long getRoleId() {
-        return roleId;
+        return roleid;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setRoleId(Long roleid) {
+        this.roleid = roleid;
     }
 
 	public Object getId() {
@@ -53,7 +53,7 @@ public class EmployeeDesignationMapping {
 		return null;
 	}
 
-	public void setDesignationId(Object roleId2) {
+	public void setDesignationId(Object roleid2) {
 		// TODO Auto-generated method stub
 		
 	}

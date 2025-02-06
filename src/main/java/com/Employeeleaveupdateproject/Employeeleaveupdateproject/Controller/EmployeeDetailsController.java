@@ -25,8 +25,16 @@ public class EmployeeDetailsController {
     
     @PostMapping("/add")
     public ResponseEntity<EmployeeModel> createEmployee(@RequestBody EmployeeModel employeeModel) {
-        EmployeeModel response = EmployeeDetailsServices.createEmployee(employeeModel);
-        return ResponseEntity.ok(response);
+        try {
+        	EmployeeModel response = employeeServices.createEmployee(employeeModel);
+            return ResponseEntity.ok(response);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			
+			e.printStackTrace();
+			return null;
+		}
     }
 
      

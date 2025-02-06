@@ -3,7 +3,7 @@ package com.Employeeleaveupdateproject.Employeeleaveupdateproject.Model;
 import java.sql.Date;
 public class EmployeeModel {
 
-	private Long employeeId;
+	
 
     private String firstName;
     private String lastName;
@@ -17,19 +17,13 @@ public class EmployeeModel {
     private String state;
     private String aadharNumber;
     private String panCardNumber;
-    private Long mappingId;
+
     private Long roleId;
 
-	private String roleName;
+
 	
 	
 	
-	public Long getEmployeeId() {
-		return employeeId;
-	}
-	public void setEmployeeId(Long employeeId) {
-		this.employeeId = employeeId;
-	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -96,20 +90,20 @@ public class EmployeeModel {
 	public void setPanCardNumber(String panCardNumber) {
 		this.panCardNumber = panCardNumber;
 	}
-	public Long getMappingId() {
-		return mappingId;
-	}
-	public void setMappingId(Long mappingId) {
-		this.mappingId = mappingId;
-	}
-	
-	public String getRoleName() {
-		return roleName;
-	}
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	
-	}
+//	public Long getMappingId() {
+//		return mappingId;
+//	}
+//	public void setMappingId(Long mappingId) {
+//		this.mappingId = mappingId;
+//	}
+//	
+//	public String getRoleName() {
+//		return roleName;
+//	}
+//	public void setRoleName(String roleName) {
+//		this.roleName = roleName;
+//	
+//	}
 	public Long getRoleId() {
 		return roleId;
 	}
