@@ -9,11 +9,11 @@ import org.springframework.stereotype.Repository;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDesignation;
 
 @Repository
-public interface EmployeeDesignationRepository extends JpaRepository<EmployeeDesignation, Long> {
+public interface EmployeeDesignationRepository extends JpaRepository<EmployeeDesignation, Integer> {
 
 
 	List<EmployeeDesignation> findAll();
 
-	Optional<EmployeeDesignation> findById(Long roleId);
+	Optional<EmployeeDesignation> findById(Integer roleId);
 
 }

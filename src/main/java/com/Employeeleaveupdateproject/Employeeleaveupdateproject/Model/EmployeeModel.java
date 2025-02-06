@@ -17,8 +17,7 @@ public class EmployeeModel {
     private String state;
     private String aadharNumber;
     private String panCardNumber;
-
-    private Long roleId;
+    private Integer roleId;
 
 
 	
@@ -104,10 +103,10 @@ public class EmployeeModel {
 //		this.roleName = roleName;
 //	
 //	}
-	public Long getRoleId() {
+	public Integer getRoleId() {
 		return roleId;
 	}
-	public void setRoleId(Long roleId) {
+	public void setRoleId(Integer roleId) {
 		this.roleId = roleId;
 	}
 

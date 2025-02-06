@@ -1,17 +1,12 @@
 package com.Employeeleaveupdateproject.Employeeleaveupdateproject.ServicesImpl;
-
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Model.EmployeeModel;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Repository.EmployeeDesignationMappingRepository;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Repository.EmployeeDetailsRepository;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Services.EmployeeDetailsServices;
-import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Services.roleRepository;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDesignationMapping;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.dao.EmployeeDetails;
 
@@ -84,22 +79,6 @@ public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
 	}
 
 	@Override
-	public EmployeeDetails mappingId(EmployeeDetails employee) {
-		if (employee != null) {
-			// Assuming 'setId' is a setter in EmployeeDetails class to assign an ID.
-			employee.setId(generateUniqueId());
-			return employee;
-		}
-		return null;
-	}
-
-	private static final AtomicLong counter = new AtomicLong();
-
-	private Long generateUniqueId() {
-		return counter.incrementAndGet(); // Increment and return a new unique ID
-	}
-
-	@Override
 	public EmployeeDetails roleId(EmployeeDesignationMapping mapping) {
 		if (mapping != null) {
 			// Assuming you have a method to fetch the employee based on the mapping
@@ -109,7 +88,7 @@ public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
 		return null;
 	}
 
-	private EmployeeDetails findEmployeeByDesignation(Long roleId) {
+	private EmployeeDetails findEmployeeByDesignation(Integer integer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -141,11 +120,11 @@ public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
 
 		// Step 2: Mapping Table me data insert
 		EmployeeDesignationMapping mapping = new EmployeeDesignationMapping();
-		mapping.setEmployeeId(savedEmployee.getId());
+		mapping.setEmployeeId(savedEmployee.getEmployeeId());
 		mapping.setRoleId(employeeModel.getRoleId()); // mappingId store karna hai
 
 		// Save Mapping
-		 mappingRepository.save(mapping);
+		 EmployeeDesignationMapping designationMapping = mappingRepository.save(mapping);
 
 		return employeeModel;
 	}

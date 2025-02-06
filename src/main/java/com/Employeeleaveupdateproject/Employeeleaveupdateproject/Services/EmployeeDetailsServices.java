@@ -15,8 +15,6 @@ public interface EmployeeDetailsServices {
 	    EmployeeDetails updateEmployee(Long id, EmployeeDetails employee);
 	    void deleteEmployee(Long id);
 		EmployeeDetails roleId(EmployeeDesignationMapping mapping);
-		EmployeeDetails mappingId(EmployeeDetails employee);		
-
 		EmployeeDetails saveEmployee(EmployeeDesignationMapping mapping);
 		EmployeeModel createEmployee(EmployeeModel employeeModel);
 
