@@ -1,6 +1,5 @@
 package com.Employeeleaveupdateproject.Employeeleaveupdateproject.ServicesImpl;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.Employeeleaveupdateproject.Employeeleaveupdateproject.Model.EmployeeModel;
@@ -18,87 +17,16 @@ public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
 
 	@Autowired
 	EmployeeDesignationMappingRepository mappingRepository;
-
-	public EmployeeDetails saveEmployee(EmployeeDetails employee) {
-		// Check if email or mobile number already exists (optional validation)
-		if (employeeRepository.existsByEmail(employee.getEmail())) {
-			throw new RuntimeException("Employee with this email already exists.");
-		}
-
-		if (employeeRepository.existsByMobileNo(employee.getMobileNo())) {
-			throw new RuntimeException("Employee with this mobile number already exists.");
-		}
-
-		// Save employee details
-		return employeeRepository.save(employee);
-	}
-
-	public EmployeeDetails updateEmployee(Long id, EmployeeDetails updatedEmployee) {
-		Optional<EmployeeDetails> existingEmployeeOptional = employeeRepository.findById(id);
-
-		if (existingEmployeeOptional.isPresent()) {
-			EmployeeDetails existingEmployee = existingEmployeeOptional.get();
-
-			existingEmployee.setFirstName(updatedEmployee.getFirstName());
-			existingEmployee.setLastName(updatedEmployee.getLastName());
-			existingEmployee.setGender(updatedEmployee.getGender());
-			existingEmployee.setDateOfBirth(updatedEmployee.getDateOfBirth());
-			existingEmployee.setEmail(updatedEmployee.getEmail());
-			existingEmployee.setMobileNo(updatedEmployee.getMobileNo());
-			existingEmployee.setCity(updatedEmployee.getCity());
-			existingEmployee.setDistrict(updatedEmployee.getDistrict());
-			existingEmployee.setState(updatedEmployee.getState());
-			existingEmployee.setAadharNumber(updatedEmployee.getAadharNumber());
-			existingEmployee.setPanCardNumber(updatedEmployee.getPanCardNumber());
-
-			// Save the updated employee details
-			return employeeRepository.save(existingEmployee);
-		} else {
-			throw new RuntimeException("Employee not found with ID: " + id);
-		}
-	}
-
+  
+	
+	
 	@Override
 	public List<EmployeeDetails> getAllEmployees() {
 		return employeeRepository.findAll();
 	}
 
-	@Override
-	public Optional<EmployeeDetails> getEmployeeById(Long id) {
-		return employeeRepository.findById(id);
-	}
-
-	@Override
-	public void deleteEmployee(Long id) {
-		if (employeeRepository.existsById(id)) {
-			employeeRepository.deleteById(id);
-		} else {
-			// Handle case where employee with the provided ID doesn't exist
-			throw new RuntimeException("Employee not found with ID: " + id);
-		}
-	}
-
-	@Override
-	public EmployeeDetails roleId(EmployeeDesignationMapping mapping) {
-		if (mapping != null) {
-			// Assuming you have a method to fetch the employee based on the mapping
-			EmployeeDetails employee = findEmployeeByDesignation(mapping.getRoleId());
-			return employee;
-		}
-		return null;
-	}
-
-	private EmployeeDetails findEmployeeByDesignation(Integer integer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public EmployeeDetails saveEmployee(EmployeeDesignationMapping mapping) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
+	
 	@Override
 	public EmployeeModel createEmployee(EmployeeModel employeeModel) {
 		// Step 1: EmployeeDetails object create & save
@@ -114,7 +42,7 @@ public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
 		employee.setState(employeeModel.getState());
 		employee.setAadharNumber(employeeModel.getAadharNumber());
 		employee.setPanCardNumber(employeeModel.getPanCardNumber());
-
+		employee.setPassword(employeeModel.getPassword());
 		// Save Employee
 		EmployeeDetails savedEmployee = employeeRepository.save(employee);
 
@@ -129,4 +57,9 @@ public class EmployeeDetailsServicesImpl implements EmployeeDetailsServices {
 		return employeeModel;
 	}
 
+
 }
+
+
+
+
